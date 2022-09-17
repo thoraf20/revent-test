@@ -1,7 +1,10 @@
 import React from 'react'
+import { SectionLayout } from './SectionLayout'
 
 export const Portfolio = () => {
   return (
-    <div>Portfolio</div>
+    <SectionLayout title="Portfolio">
+      <div>Portfolio</div>
+    </SectionLayout>
   )
 }
