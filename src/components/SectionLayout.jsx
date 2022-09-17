@@ -3,6 +3,10 @@ import React from 'react'
 
 export const SectionLayout = ({children, title}) => {
   return (
-    <Box>{children}</Box>
+    <Box>
+        
+
+        <Box>{children}</Box>
+    </Box>
   )
 }

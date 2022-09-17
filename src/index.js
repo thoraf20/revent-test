@@ -4,8 +4,14 @@ import './index.css';
 import App from './App';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
-const theme = createTheme({});
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Montserrat',
+      'sans-serif',
+    ].join(','),
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
