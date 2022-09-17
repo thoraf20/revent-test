@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import {makeStyles} from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
 export const LandingLayout = ({children}) => {
   const {container} = useStyles();
   return (
-    <Box className={container}>
+    <Stack spacing={10} className={container}>
         {children}
-    </Box>
+    </Stack>
   )
 }
