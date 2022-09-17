@@ -1,10 +1,116 @@
-import React from 'react'
-import { SectionLayout } from './SectionLayout'
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+import Tabs from '@mui/material/Tabs';
+import { makeStyles } from '@mui/styles';
+import Tab from '@mui/material/Tab';
+import { SectionLayout } from './SectionLayout';
+import { PortfolioImg } from '../assets/svg';
+
+function TabPanel(props) {
+	const { children, value, index, ...other } = props;
+
+	return (
+		<div
+			role='tabpanel'
+			hidden={value !== index}
+			id={`simple-tabpanel-${index}`}
+			aria-labelledby={`simple-tab-${index}`}
+			{...other}
+		>
+			{value === index && (
+				<Box sx={{ p: 3 }}>
+					<Typography>{children}</Typography>
+				</Box>
+			)}
+		</div>
+	);
+}
+
+function a11yProps(index) {
+	return {
+		id: `simple-tab-${index}`,
+		'aria-controls': `simple-tabpanel-${index}`,
+	};
+}
+
+const useStyles = makeStyles((theme) => ({
+	tab: {
+		color: '#fff !important',
+		textTransform: 'none !important',
+		borderRadius: '5px !important',
+		'&.Mui-selected': {
+			color: '#000 !important',
+			backgroundColor: '#fff',
+			fontWeight: '700',
+		},
+		'&.Mui-focusVisible': {
+			backgroundColor: 'rgba(100, 95, 228, 0.32)',
+		},
+	},
+	tabs: {
+		'& .MuiTabs-indicator': {
+			display: 'flex',
+			justifyContent: 'center',
+			backgroundColor: 'transparent',
+		},
+		'& .MuiTabs-indicatorSpan': {
+			display: 'none',
+		},
+	},
+}));
 
 export const Portfolio = () => {
-  return (
-    <SectionLayout title="Portfolio">
-      <div>Portfolio</div>
-    </SectionLayout>
-  )
-}
+	const { tab, tabs } = useStyles();
+	const [value, setValue] = React.useState(0);
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
+
+	return (
+		<SectionLayout title='Portfolio'>
+			<Box sx={{ width: '100%' }}>
+				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+					<Tabs
+						value={value}
+						onChange={handleChange}
+						aria-label='basic tabs example'
+						centered
+						className={tabs}
+					>
+						<Tab className={tab} label='All' {...a11yProps(0)} />
+						<Tab className={tab} label='Website' {...a11yProps(1)} />
+						<Tab className={tab} label='MobileApp' {...a11yProps(2)} />
+						<Tab className={tab} label='CSS' {...a11yProps(3)} />
+						<Tab className={tab} label='GitHub' {...a11yProps(4)} />
+					</Tabs>
+				</Box>
+				<TabPanel value={value} index={0}>
+					<PortfolioImg />
+					<PortfolioImg />
+					<PortfolioImg />
+				</TabPanel>
+				<TabPanel value={value} index={1}>
+					<PortfolioImg />
+					<PortfolioImg />
+					<PortfolioImg />
+				</TabPanel>
+				<TabPanel value={value} index={2}>
+					<PortfolioImg />
+					<PortfolioImg />
+					<PortfolioImg />
+				</TabPanel>
+				<TabPanel value={value} index={3}>
+					<PortfolioImg />
+					<PortfolioImg />
+					<PortfolioImg />
+				</TabPanel>
+				<TabPanel value={value} index={4}>
+					<PortfolioImg />
+					<PortfolioImg />
+					<PortfolioImg />
+				</TabPanel>
+			</Box>
+		</SectionLayout>
+	);
+};
