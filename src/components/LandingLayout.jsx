@@ -6,9 +6,10 @@ const useStyles = makeStyles((theme) => ({
     container: {
         background: '#000000',
         color: '#fff',
-        height: '100vh',
+        minHeight: '100vh',
         width: '100vw',
-        padding: `${theme.spacing(4)} ${theme.spacing(18)}`
+        padding: `${theme.spacing(4)} ${theme.spacing(18)}`,
+        paddingBottom: theme.spacing(18),
     },
   }));
 
