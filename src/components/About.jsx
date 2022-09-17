@@ -1,7 +1,10 @@
 import React from 'react'
+import { SectionLayout } from './SectionLayout'
 
 export const About = () => {
   return (
-    <div>About</div>
+    <SectionLayout title="About us">
+        <div>About</div>
+    </SectionLayout>
   )
 }

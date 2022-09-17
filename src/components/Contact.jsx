@@ -1,7 +1,11 @@
 import React from 'react'
+import { SectionLayout } from './SectionLayout'
 
 export const Contact = () => {
   return (
-    <div>Contact</div>
+    <SectionLayout title="Get in Touch">
+        <div>Contact</div>
+    </SectionLayout>
+
   )
 }
