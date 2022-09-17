@@ -35,7 +35,7 @@ export const SectionLayout = ({children, title}) => {
         <Typography className={sectionTitle}>
             {title}
         </Typography>
-        <Box>{children}</Box>
+        <Box width="100%">{children}</Box>
     </Box>
   )
 }
