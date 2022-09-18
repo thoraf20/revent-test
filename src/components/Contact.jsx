@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: 'space-between',
 		width: '100%',
 		gap: theme.spacing(4),
+		'@media (max-width: 438px)': {
+			flexDirection: 'column',
+		},
 	},
 	call: {
 		display: 'flex',
@@ -31,18 +34,18 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: '10px !important',
 		height: theme.spacing(5.25),
 	},
-  btn: {
-    color: "#000000 !important",
-    fontWeight: '700 !important',
-    fontSize: `${theme.spacing(2.5)} !important`,
-    width: 'max-content !important',
-    borderRadius: '10px !important',
-    background: '#FCE82F !important',
-    padding: `${theme.spacing(2)} ${theme.spacing(3)} !important`,
-    textTransform: 'none !important'
-  }
+	btn: {
+		color: '#000000 !important',
+		fontWeight: '700 !important',
+		fontSize: `${theme.spacing(2.5)} !important`,
+		width: 'max-content !important',
+		borderRadius: '10px !important',
+		background: '#FCE82F !important',
+		padding: `${theme.spacing(2)} ${theme.spacing(3)} !important`,
+		textTransform: 'none !important',
+	},
 }));
-
+// 438
 export const Contact = () => {
 	const classes = useStyles();
 	return (
@@ -80,9 +83,11 @@ export const Contact = () => {
 				/>
 				<TextareaAutosize
 					style={{ height: '220px' }}
-          className={classes.input}
+					className={classes.input}
 				/>
-        <Button className={classes.btn} variant="contained">Send message</Button>
+				<Button className={classes.btn} variant='contained'>
+					Send message
+				</Button>
 			</Stack>
 		</SectionLayout>
 	);
