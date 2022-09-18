@@ -5,6 +5,7 @@ import { makeStyles } from '@mui/styles';
 import Tab from '@mui/material/Tab';
 import { SectionLayout } from './SectionLayout';
 import { PortfolioImg } from '../assets/svg';
+import imgSrc from '../assets/svg/Rectangle.png'
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
@@ -67,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
 			'& svg': {
 				width: '100%',
 			},
+			'& img': {
+				width: '100%',
+			},
 		},
 	},
 }));
@@ -100,9 +104,9 @@ export const Portfolio = () => {
 					</Tabs>
 				</Box>
 				<TabPanel className={tabPanel} value={value} index={0}>
-					<PortfolioImg />
-					<PortfolioImg />
-					<PortfolioImg />
+					<img alt="" src={imgSrc}/>
+					<img alt="" src={imgSrc}/>
+					<img alt="" src={imgSrc}/>
 				</TabPanel>
 				<TabPanel className={tabPanel} value={value} index={1}>
 					<PortfolioImg />
