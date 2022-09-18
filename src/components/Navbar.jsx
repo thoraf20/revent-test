@@ -3,13 +3,14 @@ import { AppBar, Toolbar, Box, Link } from '@mui/material'
 import { Logo } from '../assets/svg';
 
 const appbar = {
-  background: '#000000'
+  background: '#000000',
+  marginBottom: '70px'
 }
 const appbarWrapper = {
   width: '84%',
   margin: '0 auto',
   display: 'flex',
-  justifyContent:'space-between'
+  justifyContent:'space-between',
 }
 
 const button = {
@@ -18,6 +19,11 @@ const button = {
   textDecoration: 'none',
   cursor: 'pointer',
   fontWeight: '600 !important',
+  '&.Mui-selected': {
+    color: '#000 !important',
+    backgroundColor: '#fff',
+    fontWeight: '700',
+  },
 }
 
 export const Navbar = () => {
@@ -32,7 +38,7 @@ export const Navbar = () => {
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Link to="/" key={item} sx={button}>
+              <Link to="#" key={item} sx={button}>
                 {item}
               </Link>
             ))}
