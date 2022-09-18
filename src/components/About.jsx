@@ -2,7 +2,7 @@ import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { SectionLayout } from './SectionLayout';
-import { AbtImage } from '../assets/svg';
+import AboutImg from '../assets/svg/about.png';
 
 
 const first = {
@@ -74,7 +74,8 @@ export const About = () => {
 		<SectionLayout title='About us'>
 			<Box className={container} id="about">
 				<Box className={image}>
-					<AbtImage />
+					{/* <AboutImg /> */}
+          <img alt="" src={AboutImg}/>
 				</Box>
 				<Box className={right}>
 					<Typography sx={first}>We focus on value and excellence</Typography>

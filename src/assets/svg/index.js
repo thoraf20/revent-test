@@ -1,7 +1,7 @@
 export {ReactComponent as CallIcon} from './call.svg';
 export {ReactComponent as SendIcon} from './send.svg';
 export {ReactComponent as Logo} from './logo.svg';
-export {ReactComponent as AbtImage} from './rectangle.svg';
+export {ReactComponent as Rectangle} from './rectangle.svg';
 export {ReactComponent as PortfolioImg} from './portfolio.svg';
 export {ReactComponent as Diamond} from './diamond.svg';
 export {ReactComponent as Be} from './be.svg';
