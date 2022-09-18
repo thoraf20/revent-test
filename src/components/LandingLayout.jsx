@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         padding: `${theme.spacing(4)} ${theme.spacing(18)}`,
         paddingBottom: theme.spacing(18),
+        '@media (max-width: 1224px)': {
+          padding: `${theme.spacing(4)} ${theme.spacing(5)}`,
+        },
     },
   }));
 

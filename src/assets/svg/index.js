@@ -8,6 +8,7 @@ export {ReactComponent as Be} from './be.svg';
 export {ReactComponent as Ball} from './ball.svg';
 export {ReactComponent as Facebook} from './facebook.svg';
 export {ReactComponent as Yellow} from './yellow.svg';
+export {ReactComponent as Petal} from './petal.svg';
 
 
 

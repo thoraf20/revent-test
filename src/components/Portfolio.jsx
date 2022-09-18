@@ -48,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	tabs: {
+		overflow: 'scroll !important',
+		width: '100%',
 		'& .MuiTabs-indicator': {
 			display: 'flex',
 			justifyContent: 'center',
@@ -57,10 +59,20 @@ const useStyles = makeStyles((theme) => ({
 			display: 'none',
 		},
 	},
+	tabPanel: {
+		display: 'flex',
+		alignItems: 'center',
+		width: '100%',
+		'@media (max-width: 872px)': {
+			'& svg': {
+				width: '100%',
+			},
+		},
+	},
 }));
 
 export const Portfolio = () => {
-	const { tab, tabs } = useStyles();
+	const { tab, tabs, tabPanel } = useStyles();
 	const [value, setValue] = React.useState(0);
 
 	const handleChange = (event, newValue) => {
@@ -70,13 +82,15 @@ export const Portfolio = () => {
 	return (
 		<SectionLayout title='Portfolio'>
 			<Box sx={{ width: '100%' }}>
-				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+				<Box>
 					<Tabs
 						value={value}
 						onChange={handleChange}
 						aria-label='basic tabs example'
 						centered
 						className={tabs}
+						variant="scrollable"
+  						scrollButtons
 					>
 						<Tab className={tab} label='All' {...a11yProps(0)} />
 						<Tab className={tab} label='Website' {...a11yProps(1)} />
@@ -85,27 +99,27 @@ export const Portfolio = () => {
 						<Tab className={tab} label='GitHub' {...a11yProps(4)} />
 					</Tabs>
 				</Box>
-				<TabPanel value={value} index={0}>
+				<TabPanel className={tabPanel} value={value} index={0}>
 					<PortfolioImg />
 					<PortfolioImg />
 					<PortfolioImg />
 				</TabPanel>
-				<TabPanel value={value} index={1}>
+				<TabPanel className={tabPanel} value={value} index={1}>
 					<PortfolioImg />
 					<PortfolioImg />
 					<PortfolioImg />
 				</TabPanel>
-				<TabPanel value={value} index={2}>
+				<TabPanel className={tabPanel} value={value} index={2}>
 					<PortfolioImg />
 					<PortfolioImg />
 					<PortfolioImg />
 				</TabPanel>
-				<TabPanel value={value} index={3}>
+				<TabPanel className={tabPanel} value={value} index={3}>
 					<PortfolioImg />
 					<PortfolioImg />
 					<PortfolioImg />
 				</TabPanel>
-				<TabPanel value={value} index={4}>
+				<TabPanel className={tabPanel} value={value} index={4}>
 					<PortfolioImg />
 					<PortfolioImg />
 					<PortfolioImg />
