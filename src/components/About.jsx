@@ -4,7 +4,6 @@ import { makeStyles } from '@mui/styles';
 import { SectionLayout } from './SectionLayout';
 import AboutImg from '../assets/svg/about.png';
 
-
 const first = {
 	fontSize: '1.5rem',
 	fontWeight: '600 !important',
