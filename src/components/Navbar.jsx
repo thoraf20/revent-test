@@ -40,8 +40,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: `0 ${theme.spacing(18)} !important`,
 		'@media (max-width: 1224px)': {
 			padding: `0 ${theme.spacing(5)} !important`,
-		  },
-
+		},
 	},
 	menu: {
 		'@media (min-width: 836px)': {
@@ -58,7 +57,12 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 }));
-const navItems = ['About Us', 'Portfolio', 'Experience', 'Contact'];
+const navItems = [
+	{ label: 'About Us', link: '/#about' },
+	{ label: 'Portfolio', link: '/#portfolio' },
+	{ label: 'Experience', link: '/#experience' },
+	{ label: 'Contact', link: '/#contact' },
+];
 const drawerWidth = 240;
 
 export const Navbar = () => {
@@ -76,10 +80,14 @@ export const Navbar = () => {
 			</Typography>
 			<Divider />
 			<List>
-				{navItems.map((item) => (
-					<ListItem key={item} disablePadding>
+				{navItems.map(({label, link}) => (
+					<ListItem
+						onClick={() => window.location.replace(link)}
+						key={link}
+						disablePadding
+					>
 						<ListItemButton sx={{ textAlign: 'center' }}>
-							<ListItemText primary={item} />
+							<ListItemText primary={label} />
 						</ListItemButton>
 					</ListItem>
 				))}
@@ -97,9 +105,9 @@ export const Navbar = () => {
 						</Box>
 
 						<Box className={links}>
-							{navItems.map((item) => (
-								<Link to='#' key={item} sx={button}>
-									{item}
+							{navItems.map(({label, link}) => (
+								<Link onClick={() => window.location.replace(link)} key={link} sx={button}>
+									{label}
 								</Link>
 							))}
 						</Box>

@@ -72,7 +72,7 @@ export const About = () => {
 	const { container, right, image } = useStyles();
 	return (
 		<SectionLayout title='About us'>
-			<Box className={container}>
+			<Box className={container} id="about">
 				<Box className={image}>
 					<AbtImage />
 				</Box>

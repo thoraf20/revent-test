@@ -31,7 +31,7 @@ const course = {
 export const Resume = () => {
 	return (
 		<SectionLayout title='Resume'>
-			<Box sx={container}>
+			<Box id="experience" sx={container}>
 				<Box sx={{ display: 'flex' }}>
 					<Box sx={{ borderLeft: '6px solid #FCE82F' }}></Box>
 					<Box>

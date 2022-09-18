@@ -86,7 +86,7 @@ export const Portfolio = () => {
 
 	return (
 		<SectionLayout title='Portfolio'>
-			<Box sx={{ width: '100%' }}>
+			<Box id="portfolio" sx={{ width: '100%' }}>
 				<Box>
 					<Tabs
 						value={value}

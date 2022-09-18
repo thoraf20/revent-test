@@ -50,7 +50,7 @@ export const Contact = () => {
 	const classes = useStyles();
 	return (
 		<SectionLayout title='Get in Touch'>
-			<Stack spacing={4} className={classes.container}>
+			<Stack spacing={4} className={classes.container} id="contact">
 				<Box className={classes.callAndEmailCls}>
 					<Stack spacing={1} className={classes.call}>
 						<CallIcon />
