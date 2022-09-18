@@ -19,11 +19,6 @@ const button = {
   textDecoration: 'none',
   cursor: 'pointer',
   fontWeight: '600 !important',
-  '&.Mui-selected': {
-    color: '#000 !important',
-    backgroundColor: '#fff',
-    fontWeight: '700',
-  },
 }
 
 export const Navbar = () => {

@@ -6,7 +6,6 @@ const container = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  // marginTop: '100px'
 }
 
 const first = {
@@ -63,7 +62,6 @@ export const MainMenu = () => {
           <Box sx={circle} variant="contained"><Ball /></Box>
           <Box sx={circle} variant="contained"><Facebook /></Box>
         </Box>
-
      </Box>
      <Box>
         <Box sx={{ position: 'relative'}}>
