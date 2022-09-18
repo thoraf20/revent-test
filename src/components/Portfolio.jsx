@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery } from '@mui/material';
 import Tabs from '@mui/material/Tabs';
 import { makeStyles } from '@mui/styles';
 import Tab from '@mui/material/Tab';
@@ -72,6 +72,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Portfolio = () => {
+	const isMobile = useMediaQuery('(max-width:600px)');
 	const { tab, tabs, tabPanel } = useStyles();
 	const [value, setValue] = React.useState(0);
 
@@ -89,8 +90,7 @@ export const Portfolio = () => {
 						aria-label='basic tabs example'
 						centered
 						className={tabs}
-						variant="scrollable"
-  						scrollButtons
+						{...isMobile && ({scrollButton: true, variant: 'scrollable'})}
 					>
 						<Tab className={tab} label='All' {...a11yProps(0)} />
 						<Tab className={tab} label='Website' {...a11yProps(1)} />

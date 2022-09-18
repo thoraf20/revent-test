@@ -9,7 +9,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { makeStyles } from '@mui/styles';
 import { Logo, Petal } from '../assets/svg';
 
@@ -38,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
 		// },
 		display: 'flex',
 		justifyContent: 'space-between',
-		padding: `0 ${theme.spacing(18)}`,
+		padding: `0 ${theme.spacing(18)} !important`,
 		'@media (max-width: 1224px)': {
-			padding: `0 ${theme.spacing(5)}`,
+			padding: `0 ${theme.spacing(5)} !important`,
 		  },
 
 	},
