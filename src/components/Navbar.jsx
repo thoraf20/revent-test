@@ -68,10 +68,15 @@ const drawerWidth = 240;
 export const Navbar = () => {
 	const { container, links, menu, logo, appbarWrapper } = useStyles();
 	const [mobileOpen, setMobileOpen] = React.useState(false);
-
+	const [activeLink, setActiveLink] = React.useState('');
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
+
+	const handleClickLink = (link) => {
+		setActiveLink(link);
+		window.location.replace(link)
+	}
 
 	const drawer = (
 		<Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -106,7 +111,8 @@ export const Navbar = () => {
 
 						<Box className={links}>
 							{navItems.map(({label, link}) => (
-								<Link onClick={() => window.location.replace(link)} key={link} sx={button}>
+								<Link onClick={() => handleClickLink(link)} key={link} sx={{...button,
+								color: activeLink === link ? '#FCE82F' : 'white'}}>
 									{label}
 								</Link>
 							))}
